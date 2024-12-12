@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Age Puzzle Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Age Puzzle Game</h1>
+  <p>Use the diagram below to solve the puzzle!</p>
+  <img src="diagram.png" alt="Age Puzzle Diagram" style="max-width: 100%;">
+  
+  <div class="question-box">
+    <p class="question">What is the current age of C?</p>
+    <div class="options">
+      <button onclick="checkAnswer(56)">56</button>
+      <button onclick="checkAnswer(42)">42</button>
+      <button onclick="checkAnswer(50)">50</button>
+      <button onclick="checkAnswer(48)">48</button>
+    </div>
+    <p id="feedback"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+  background-color: #f0f8ff;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.correct {
+  color: green;
+  font-weight: bold;
+}
+
+.wrong {
+  color: red;
+  font-weight: bold;
+}
+
+
+
+
+
+function checkAnswer(answer) {
+  const feedback = document.getElementById('feedback');
+  if (answer === 50) {
+    feedback.innerHTML = "🎉 Correct! C's age is 50 years.";
+    feedback.className = 'correct';
+  } else {
+    feedback.innerHTML = "❌ Wrong answer. Try again!";
+    feedback.className = 'wrong';
+  }
+}
